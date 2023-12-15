@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,9 +32,52 @@ namespace shivamProject
 
         private void LogInBtn_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
-            form4.Show();
-            this.Hide();
+            string connectionString = "Data Source=DESKTOP-UR174K2;Initial Catalog=FindHope;Integrated Security=True;";
+            if (adharBox.Text != "" && passwordBox.Text != "")
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    try
+                    {
+
+                        string query = "SELECT COUNT(*) FROM VolunteerDetails WHERE aadharNo = @Aadhar AND password = @Password";
+                        using (SqlCommand cmd = new SqlCommand(query, con))
+                        {
+
+                            cmd.Parameters.AddWithValue("@Aadhar", adharBox.Text);
+                            cmd.Parameters.AddWithValue("@Password", passwordBox.Text);
+
+                            int count = (int)cmd.ExecuteScalar();
+
+                            if (count > 0)
+                            {
+
+                                MessageBox.Show("Login successful!");
+                                Form4 form4 = new Form4();
+                                form4.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+
+                                MessageBox.Show("Invalid credential Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Failed to insert message" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+ 
+                MessageBox.Show("Please enter Aadhar and Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
         }
 
         private void volButton_Click(object sender, EventArgs e)
@@ -46,10 +90,20 @@ namespace shivamProject
 
         private void adminUse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form3 form3 = new Form3();
-            form3.Show();
-            this.Hide();
+            string userInput = Microsoft.VisualBasic.Interaction.InputBox("Enter some Input :", "Input Box", "");
+
+            if (userInput == "admin4100")
+            {
+                Form3 form3 = new Form3();
+                form3.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid input. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void typingEffect_Click(object sender, EventArgs e)
         {
@@ -81,7 +135,6 @@ namespace shivamProject
         {
             Form5 form5 = new Form5();
             form5.Show();
-
             this.Hide();
         }
     }

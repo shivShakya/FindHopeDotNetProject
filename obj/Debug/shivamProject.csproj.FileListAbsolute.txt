@@ -2,6 +2,9 @@ C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.csproj.AssemblyRe
 C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.Form1.resources
 C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.Form2.resources
 C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.Form3.resources
+C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.Form4.resources
+C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.Form5.resources
+C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.Form6.resources
 C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.Properties.Resources.resources
 C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.csproj.GenerateResource.cache
 C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.csproj.CoreCompileInputs.cache
@@ -10,5 +13,3 @@ C:\Users\HP\source\repos\shivamProject\bin\Debug\shivamProject.exe
 C:\Users\HP\source\repos\shivamProject\bin\Debug\shivamProject.pdb
 C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.exe
 C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.pdb
-C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.Form4.resources
-C:\Users\HP\source\repos\shivamProject\obj\Debug\shivamProject.Form5.resources

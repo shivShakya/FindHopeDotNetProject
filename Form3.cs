@@ -50,5 +50,38 @@ namespace shivamProject
             volPanel1.Visible = false;
             postPanel1.Visible = true;
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'findHopeDataSet1.volunteerDetails' table. You can move, or remove it, as needed.
+            this.volunteerDetailsTableAdapter.Fill(this.findHopeDataSet1.volunteerDetails);
+            this.createPostTableAdapter.Fill(this.findHopeDataSet.CreatePost);
+            dataGridView1.DataSource = this.findHopeDataSet.CreatePost;
+        }
+
+      
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.volunteerDetailsTableAdapter.FillBy(this.findHopeDataSet1.volunteerDetails);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
